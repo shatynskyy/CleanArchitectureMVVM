@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="10dp"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:src="@tools:sample/avatars"/>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_item"
+        android:fontFamily="sans-serif-medium"
+        android:textSize="@dimen/text_size_medium"
+        android:gravity="center"
+        app:layout_constraintStart_toEndOf="@id/image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/image"
+        tools:text="Title" />
+
+    <LinearLayout
+        android:id="@+id/abv_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_marginHorizontal="@dimen/margin_item"
+        app:layout_constraintTop_toBottomOf="@+id/title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/image">
+
+        <TextView
+            android:id="@+id/abv_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/abv"/>
+
+        <TextView
+            android:id="@+id/abv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_small"
+            tools:text="ABV"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/first_brewed_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_marginHorizontal="@dimen/margin_item"
+        app:layout_constraintTop_toBottomOf="@+id/abv_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/image">
+
+        <TextView
+            android:id="@+id/first_brewed_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:textSize="@dimen/text_size_small"
+            app:layout_constraintTop_toBottomOf="@+id/abv_label"
+            app:layout_constraintStart_toEndOf="@id/image"
+            android:text="@string/first_brewed"/>
+
+        <TextView
+            android:id="@+id/first_brewed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_small"
+            tools:text="first brewed"/>
+
+    </LinearLayout>
+
+
+
+    <Button
+        android:id="@+id/remove_beer_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/margin_medium"
+        app:layout_constraintTop_toBottomOf="@id/first_brewed_layout"
+        app:layout_constraintStart_toEndOf="@id/image"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/remove"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

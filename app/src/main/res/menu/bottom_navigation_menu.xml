@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/randomBeerFragment"
+        android:title="Random Beer"
+        android:icon="@drawable/icon_beer"/>
+    <item
+        android:id="@+id/beerListFragment"
+        android:title="Favorites"
+        android:icon="@drawable/icon_favorite"/>
+</menu>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/randomBeerFragment">
+
+    <fragment
+        android:id="@+id/randomBeerFragment"
+        android:name="com.example.cleanarchitecturemvvm.screens.RandomBeerFragment"
+        android:label="fragment_random_beer"
+        tools:layout="@layout/fragment_random_beer" />
+
+    <fragment
+        android:id="@+id/beerListFragment"
+        android:name="com.example.cleanarchitecturemvvm.screens.BeerListFragment"
+        android:label="fragment_beer_list"
+        tools:layout="@layout/fragment_beer_list" />
+</navigation>
