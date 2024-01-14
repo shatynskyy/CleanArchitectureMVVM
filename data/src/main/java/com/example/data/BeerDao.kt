@@ -6,12 +6,13 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.example.data.models.BeerEntity
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface BeerDao {
 
     @Query("SELECT * FROM beers")
-    fun getBeers(): List<BeerEntity>
+    fun getBeers(): Flow<List<BeerEntity>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertBeer(beer: BeerEntity)

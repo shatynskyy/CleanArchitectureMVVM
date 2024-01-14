@@ -5,6 +5,8 @@ import com.example.data.models.toBeerDomain
 import com.example.data.models.toBeerEntity
 import com.example.domain.models.BeerDomainModel
 import com.example.domain.repository.Repository
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
 class RepositoryImpl @Inject constructor(private val apiService: ApiService, private val beerDao: BeerDao) : Repository {
@@ -22,7 +24,8 @@ class RepositoryImpl @Inject constructor(private val apiService: ApiService, pri
         beerDao.deleteBeer(beer.toBeerEntity())
     }
 
-    override suspend fun getBeers(): List<BeerDomainModel> {
-        return beerDao.getBeers().map { it.toBeerDomain() }
+    override suspend fun getBeers(): Flow<List<BeerDomainModel>> {
+        return beerDao.getBeers().map { it.map { beerEntity -> beerEntity.toBeerDomain() } }
+
     }
 }
