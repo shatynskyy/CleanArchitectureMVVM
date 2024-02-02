@@ -2,6 +2,11 @@
 
 Welcome to CleanArchitectureMVVM, a project dedicated to showcasing the principles of Clean Architecture and MVVM design pattern. While the emphasis is not on the UI, this project serves as a comprehensive example of software architecture best practices.
 
+🍺 Key Features
+- Get random beer with detailed information.
+- Add beers to favorites.
+- Remove beers from favorites.
+
 🧱 Clean Architecture Overview:
 The project adheres to the principles of Clean Architecture, ensuring a separation of concerns and maintainability. It consists of three main modules:
 
