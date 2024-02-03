@@ -34,6 +34,10 @@ class RandomBeerViewModel @Inject constructor(private val getRandomBeerUseCase: 
         throwable.printStackTrace()
     }
 
+    init {
+        getRandomBeer()
+    }
+
     fun getRandomBeer(){
         viewModelScope.launch(Dispatchers.IO + coroutineExceptionHandler) {
             _randomBeerStateFlow.value = ResponseWrapper.Loading()
